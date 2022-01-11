@@ -1,26 +1,27 @@
 import React, { useState, useEffect } from "react"
-import Gif from "../../components/Gif/Gif"
+import ListOfGifs from "../../components/ListOfGifs/ListOfGifs"
+import Spinner from "../../components/Spinner"
 import getGifs from "../../services/getGifs"
 
 export default function SearchResults({ params }) {
+  console.log(params);
   const {keyword} = params
-
+  const [loading, setLoading] = useState(false)
   const [gifs, setGifs] = useState([])
 
   useEffect(function () {
-      getGifs({ keyword }).then(gifs => setGifs(gifs));
+    setLoading(true)
+      getGifs({ keyword })
+      .then(gifs => {
+        setGifs(gifs) 
+        setLoading(false)
+      })
   }, [keyword])
 
-  return <div>
-    {    
-      gifs.map(({id, title, url}) => 
-        <Gif
-          id={id}
-          key={id} 
-          title={title} 
-          url={url} 
-        />
-      )
+  return <>
+    {loading
+      ? <Spinner/>
+      : <ListOfGifs gifs={gifs} />
     }
-  </div> 
+  </> 
 }
