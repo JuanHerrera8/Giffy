@@ -9,7 +9,6 @@ const POPULAR_GIFS = ["Matriz", "Venezuela", "Chile", "Colombia", "Ecuador"]
 const Home = () => {
   const [keyword, setKeyword] = useState('')
   const [path, pushLocation] = useLocation()
-
   const {loading, gifs} = useGifs()
 
   const handleSubmit = evt => {
