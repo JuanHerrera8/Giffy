@@ -24,7 +24,11 @@ export default function App() {
             <Route  
             component={Detail}
             path="/gif/:id" />
-             </GifsContextProvider>
+            <Route  
+            component={() => <h1>404 ERROR :(</h1> }
+            path="/404" />
+            
+          </GifsContextProvider>
         </section>
       </div>
     </StaticContext.Provider>
