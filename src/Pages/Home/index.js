@@ -5,6 +5,7 @@ import TrendingSearches from "components/TrendingSearches";
 import { useGifs } from "hooks/useGifs";
 import './Home.css'
 import SearchForm from "components/SearchForm";
+import { Helmet } from "react-helmet";
 
 
 const Home = () => {
@@ -19,7 +20,12 @@ const Home = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Home | Giffy</title>
+      </Helmet>
+      <header>
       <SearchForm onSubmit={handleSubmit} />
+      </header>
       <div> 
         <div>
           <h3 className="App-title">Última busqueda</h3>
