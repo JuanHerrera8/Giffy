@@ -4,7 +4,7 @@ import getGifs from "../services/getGifs"
 
 const INICIAL_PAGE = 0
 
-export function useGifs({keyword} = { keyword: null }){
+export function useGifs({ keyword, rating, lang } = { keyword: null }){
     const [loading, setLoading] = useState(false)
     const [loadingNextPage, setLoadingNextPage] = useState(false);
     
@@ -17,14 +17,14 @@ export function useGifs({keyword} = { keyword: null }){
       useEffect(function () {
         setLoading(true)
 
-          getGifs({ keyword: keyworToUse })
+          getGifs({ keyword: keyworToUse, rating, lang })
           .then(gifs => {
             setGifs(gifs) 
             setLoading(false)
             //guardamos la keyword en el localStorage
             localStorage.setItem('lasKeyword', keyword)
           })
-      }, [keyword, keyworToUse, setGifs])
+      }, [keyword, setGifs, keyworToUse, rating, lang])
 
       useEffect(function () { 
         if (page === INICIAL_PAGE) return

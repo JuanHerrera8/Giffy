@@ -1,6 +1,10 @@
 .Gif {
     margin-bottom: .5em;
+    
   }
+  .Gif:hover{
+    border: solid #00ffff 5px;
+  } 
   
   .Gif-link {
     color: #000;
@@ -17,6 +21,11 @@
     color: #fff;
     margin: 0;
     position: absolute;
+  }
+  .Gif h4:hover{
+    background: #00ffff;
+    color: black;
+    
   }
   
   .Gif img {

@@ -14,16 +14,36 @@ ul {
 form input {
 background: silver;
    border: 1px solid #393939;
-   border-radius: 10px;
+   border-radius: 20px 0px;
    color: #101010;
    font-size: 25px;
    padding: 5px;
 }
+
+.btns {
+    margin-top: 10px;
+}
+
+.btns > #btn1 {
+    border-radius: 10px 10px 0px 0px;
+}
+
+.btns > #btn2 {
+    border-radius: 0px 0px 10px 10px;
+}
+
 
 form button {
     font-size: 25px;
     padding: 5px;
     background-color: #00ffff;
     border: none;
-    border-radius: 10px;
+    border-radius: 20px 0px;
+}
+form select {
+    height: 40px;
+    width: 60px;
+    border: none;
+    color: black;
+    background-color: #C0C0C0;
 }

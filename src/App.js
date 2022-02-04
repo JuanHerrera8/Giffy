@@ -20,7 +20,7 @@ export default function App() {
             path="/" />
           <Route 
             component={SearchResults} 
-            path="/search/:keyword" />
+            path="/search/:keyword/:rating?/:lang?" />
             <Route  
             component={Detail}
             path="/gif/:id" />
